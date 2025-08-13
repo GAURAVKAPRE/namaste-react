@@ -1,27 +1,12 @@
-/**
- * 
- * 
- * <div id="parent">
- *      <div id="child1">
- *     <h1>i'm h1 tag</h1>
- *     <h2>i'm h1 tag</h2>
-      </div>
-<div id="child2">
- *     <h1>i'm h1 tag</h1>
- *     <h2>i'm h1 tag</h2>   
-     </div>
-   </div>
- */
-     // reactElement(object)=>html(browser understands)
-
-
-
-      const parent = React.createElement(
+   import React  from "react";
+   import ReactDOM from "react-dom/client";
+   
+   const parent = React.createElement(
         "div",{id:"parent"},[
         React.createElement(
             "div",{id:"child"},
            [React.createElement("h1",{},"i'm an h1 tag"),
-            React.createElement("h2",{},"i'm an h1 tag"),
+            React.createElement("h2",{},"JAI HIND , FIGHT MARNA HAI BOSS"),
            ]),
             React.createElement(
             "div",{id:"child"},
