@@ -1,3 +1,141 @@
-#heading {
-    color:red;
+
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  width: 80px;
+}
+
+.nav-items ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-items li {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-items li:hover {
+  color: #fc8019; /* Swiggy orange */
+}
+
+/* Body */
+.body {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Search Bar */
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.search input {
+  width: 50%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search input:focus {
+  border-color: #fc8019;
+  box-shadow: 0 0 8px rgba(252, 128, 25, 0.3);
+}
+
+/* Restaurant Grid */
+.res-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Restaurant Card */
+.res-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.res-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.res-logo {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.res-card:hover .res-logo {
+  transform: scale(1.05);
+}
+
+/* Text Styling */
+.res-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px;
+  color: #222;
+}
+
+.res-card h4 {
+  font-size: 14px;
+  color: #777;
+  margin: 4px 12px;
+}
+
+/* Add a rating badge */
+.rating-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #48c479;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
 }
