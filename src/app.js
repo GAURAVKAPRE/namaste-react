@@ -1,58 +1,10 @@
- import React  from "react";
+import React  from "react";
 import ReactDOM from "react-dom/client";
-
-/**
- * Header 
- * - logo
- * - nav items
- * Body 
- * -search
- * -resturentContainer
- *   - img
- *   - name of res, star rating , cuisine
- * Footer
- * -copyright 
- * -links 
- * -address
- * -contact
- */
-
-const Header= () =>{
-    return (
-        <div className="header">
-            <div className="log-container">
-                <img className="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=food&sf=&txt_keyword=All"/>
-            </div>
-          <div className="nav-items">
-           <ul>
-            <li>Home</li>
-            <li>about</li>
-            <li>contact us</li>
-            <li>cart</li>
-            </ul>
-          </div>
-        </div>
-    )
-}
-
-const RestroCard=(props)=>{
-    const {resData} = props ;
-    const{info} = resData.card.card ;
-    const{name, cuisines,avgRating}= info ;
+import Header from "./component/Header";
+import Body from "./component/Body";
 
 
-    return (
-        <div className="res-card">
-            <img className="res-logo"
-            alt="res-logo"
-           src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+ info.cloudinaryImageId}/>
-            <h3> {name} </h3>
-            <h4> {cuisines.join(", ")} </h4>
-            <h4>{avgRating}</h4>
 
-        </div>
-    );
-}
 
 const resList = [
      
@@ -1660,20 +1612,7 @@ const resList = [
 
 // not using keys(not acceptable) <<index as key << unique id(best practice);
 
- const Body = () =>{
-    return (
-        <div className="body">
-            <div className="search">search</div>
-            <div className="res-container">
-                 {
-                    resList.map((restaurant )=> (<RestroCard key={restaurant.card.card.info.id} resData={restaurant}/>))
-                 }
-                 
-            </div>
-           
-        </div>
-    )
- }
+
 const AppLayout = () =>{
     return (<div className="app">
        <Header/>

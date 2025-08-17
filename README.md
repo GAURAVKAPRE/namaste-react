@@ -21,6 +21,38 @@
  - different dev and prod bundles 
 
 
+ # namaste food
+
+ /**
+ * Header 
+ * - logo
+ * - nav items
+ * Body 
+ * -search
+ * -resturentContainer
+ *   - img
+ *   - name of res, star rating , cuisine
+ * Footer
+ * -copyright 
+ * -links 
+ * -address
+ * -contact
+ */
+
+TWO TYPE OF export/import 
+> ek file madhe ekach default export karu sakta mhanun named vaparta ;
+
+- default export/import 
+
+ ;export fefault component 
+; import component from "path"
+
+- named export/import 
+
+export const component ;
+import {component} from "path" 
+
+
 
 
 
