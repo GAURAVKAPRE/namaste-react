@@ -44,7 +44,7 @@ TWO TYPE OF export/import
 
 - default export/import 
 
- ;export fefault component 
+ ;export default component 
 ; import component from "path"
 
 - named export/import 

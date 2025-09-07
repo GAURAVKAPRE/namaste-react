@@ -2,8 +2,8 @@
 import{CDN_URL} from "../utils/constants"
 const RestroCard=(props)=>{
     const {resData} = props ;
-    const{info} = resData.card.card ;
-    const{name, cuisines,avgRating}= info ;
+    const info = resData.info ;
+    const{name,cuisines,avgRating}= info ;
 
 
     return (
