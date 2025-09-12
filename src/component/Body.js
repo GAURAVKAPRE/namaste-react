@@ -14,6 +14,7 @@ const[filteredRestaurent, setfilteredRestaurent] = useState([]);
 
 const[searchText, setsearchText] = useState("");
 
+// whenever state variable update, react triggers a reconciliation cycle(re-render the component )
 useEffect(() =>{
   
     fetchData();

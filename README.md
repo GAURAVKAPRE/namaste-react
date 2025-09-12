@@ -59,6 +59,10 @@ import {component} from "path"
 - useState()
 - useEffect()
 
+# 2 type routing in web apps 
+- client side routing 
+- server side routing 
+
 
 
 
