@@ -220,6 +220,69 @@ body {
   }
 }
 
+.menu {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #333;
+}
 
+.menu h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.menu h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+  color: #777;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.menu ul li:hover {
+  background: #f0f4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menu ul li::before {
+  content: "🍽️";
+  margin-right: 10px;
+}
+
+/* in your CSS file */
+.res-container a {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* inherit text color from parent */
+  display: inline-block;   /* so card behaves like a block */
+}
 
 

@@ -3,6 +3,7 @@ import RestroCard from "./RestroCard";
 import Shimmer from  "./Shimmer";
 
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Body = () =>{
@@ -70,7 +71,11 @@ const fetchData = async () => {
             </div>
             <div className="res-container">
                  {
-                    filteredRestaurent.map((restaurant )=> (<RestroCard key={restaurant.info.id} resData={restaurant}/>))
+                    filteredRestaurent.map((restaurant )=> (
+                    <Link  key={restaurant.info.id} to={"/restaurent/"+restaurant.info.id}>
+                    <RestroCard resData={restaurant}/>
+                     </Link>
+                     ))
                  }
                  
             </div>
