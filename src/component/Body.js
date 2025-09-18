@@ -1,10 +1,9 @@
 
 import RestroCard from "./RestroCard";
 import Shimmer from  "./Shimmer";
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus  from "../utils/useOnlineStatus";
 
 const Body = () =>{
    // local state variable = super powerful variable
@@ -37,6 +36,13 @@ const fetchData = async () => {
   setListofRestaurent(restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   setfilteredRestaurent(restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 };
+ 
+const onlineStatus = useOnlineStatus();
+
+if(onlineStatus===false){
+  return <h1>"you are offline</h1> 
+}
+
 
 
 //    //normal js variable
