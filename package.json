@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "this is namaste react by akshay saini ",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "jest"
   },
   "repository": {
@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/GAURAVKAPRE/namaste-react#readme",
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "@tailwindcss/postcss": "^4.1.13",
+    "autoprefixer": "^10.4.21",
+    "parcel": "^2.16.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
   },
   "dependencies": {
     "react": "^19.1.1",

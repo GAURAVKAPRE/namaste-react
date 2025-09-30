@@ -1,4 +1,5 @@
-import React,{lazy , Suspense} from "react";
+
+import React ,{lazy , Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
@@ -7,6 +8,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./component/Contact";
 import Error from "./component/Error";
 import RestaurentMenu from "./component/RestaurentMenu";
+import './index.css';
 //import Grocery from "./component/Grocery";
 
 // not using keys(not acceptable) <<index as key << unique id(best practice);
@@ -22,6 +24,9 @@ const Grocery = lazy(()=>import("./component/Grocery"));
 
 
 const AppLayout = () =>{
+
+
+
     return (<div className="app">
        <Header/>
        <Outlet/>

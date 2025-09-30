@@ -19,4 +19,20 @@ const RestroCard=(props)=>{
     );
 }
 
+// higher order component 
+// input - restroCard => restroCardPromoted
+
+export const withPromotedLabel = (RestroCard) =>{
+    return (props) =>{
+        return (
+            <div>
+                <label>
+                    PROMOTED !
+                </label>
+                <RestroCard {...props} />
+            </div>
+        );
+    };
+};
+
 export default RestroCard;

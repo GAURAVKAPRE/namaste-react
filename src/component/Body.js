@@ -1,5 +1,5 @@
 
-import RestroCard from "./RestroCard";
+import RestroCard,{withPromotedLabel} from "./RestroCard";
 import Shimmer from  "./Shimmer";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -13,6 +13,8 @@ const[listOfRestaurent, setListofRestaurent]= useState([]);
 const[filteredRestaurent, setfilteredRestaurent] = useState([]);
 
 const[searchText, setsearchText] = useState("");
+
+const RestroCardPromoted = withPromotedLabel(RestroCard);
 
 // whenever state variable update, react triggers a reconciliation cycle(re-render the component )
 useEffect(() =>{
@@ -33,14 +35,17 @@ const fetchData = async () => {
   );
 
 // optional chaining ;
-  setListofRestaurent(restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  setfilteredRestaurent(restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  const restaurants =
+  restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+setListofRestaurent(restaurants);
+setfilteredRestaurent(restaurants);
+
 };
  
 const onlineStatus = useOnlineStatus();
 
 if(onlineStatus===false){
-  return <h1>"you are offline</h1> 
+  return <h1>you are offline</h1> 
 }
 
 
@@ -69,7 +74,7 @@ if(onlineStatus===false){
                 <button className="filter-btn" onClick={()=>{
                     // filter logic here 
                     const filterList  = listOfRestaurent.filter(
-                        (res) =>res.info.avgRating > 4.5
+                        (res) =>res.info.avgRating > 4
                     );
                 setfilteredRestaurent(filterList);
 
@@ -79,10 +84,11 @@ if(onlineStatus===false){
                  {
                     filteredRestaurent.map((restaurant )=> (
                     <Link  key={restaurant.info.id} to={"/restaurent/"+restaurant.info.id}>
-                    <RestroCard resData={restaurant}/>
+                      {restaurant.info.promoted ?(<RestroCardPromoted resData={restaurant}/>):
+                   ( <RestroCard resData={restaurant}/>)}
                      </Link>
-                     ))
-                 }
+                     
+                 ))}
                  
             </div>
            
