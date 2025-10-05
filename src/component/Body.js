@@ -1,9 +1,10 @@
 
 import RestroCard,{withPromotedLabel} from "./RestroCard";
 import Shimmer from  "./Shimmer";
-import { useEffect, useState } from "react";
+import { useEffect, useState , useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus  from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () =>{
    // local state variable = super powerful variable
@@ -48,7 +49,7 @@ if(onlineStatus===false){
   return <h1>you are offline</h1> 
 }
 
-
+ const {setUserName , loggedIn} = useContext(UserContext);
 
 //    //normal js variable
 //    let listOfRestaurent;
@@ -69,7 +70,8 @@ if(onlineStatus===false){
                            );
 
                     }}>search</button>
-                </div>
+                    
+                  </div>
 
                 <button className="filter-btn" onClick={()=>{
                     // filter logic here 
@@ -79,7 +81,17 @@ if(onlineStatus===false){
                 setfilteredRestaurent(filterList);
 
                 }}>Top Rated Restaurants</button>
-            </div>
+
+                </div>
+                 <div >
+                    <label>userName</label>
+                    <input className="border border-black p-2"
+                    value={loggedIn}
+                     onChange={(e) =>setUserName(e.target.value)}/>
+                   </div>
+            
+            
+          
             <div className="res-container">
                  {
                     filteredRestaurent.map((restaurant )=> (

@@ -1,5 +1,5 @@
 
-import React ,{lazy , Suspense} from "react";
+import React ,{lazy , Suspense, useEffect,useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
@@ -9,6 +9,7 @@ import Contact from "./component/Contact";
 import Error from "./component/Error";
 import RestaurentMenu from "./component/RestaurentMenu";
 import './index.css';
+import UserContext from "./utils/UserContext";
 //import Grocery from "./component/Grocery";
 
 // not using keys(not acceptable) <<index as key << unique id(best practice);
@@ -24,11 +25,29 @@ const Grocery = lazy(()=>import("./component/Grocery"));
 
 
 const AppLayout = () =>{
+    //authentication 
+    const [userName,setUserName] = useState();
 
-return (<div className="app">
+    useEffect(() =>{
+        //make an api call and send username  and password 
+        const data ={
+            name:"akshay saini"
+        }
+        setUserName(data.name);
+    },[])
+
+
+return (
+   // DEFAULT 
+<UserContext.Provider value={{loggedIn : userName, setUserName}}>
+    {/* AKSHAY*/}
+  <div className="app">
+     
        <Header/>
+    
        <Outlet/>
-    </div>);
+    </div>;
+    </UserContext.Provider>)
 };
 
 const appRouter = createBrowserRouter([
